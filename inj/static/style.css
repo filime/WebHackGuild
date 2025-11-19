@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .nav-bar {
+            width: 220px;
+            background: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            border-right: 4px solid #FFD700;
+            box-shadow: 4px 0 10px rgba(255, 215, 0, 0.5);
+            justify-content: space-between;
+        }
+        .nav-bar h2 {
+            color: #FFD700;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 10px;
+            font-size: 14px;
+            padding: 10px 30px;
+            width: calc(80% - 30px);
+            text-align: center;
+            background: #333;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .nav-bar a:hover {
+            background: #FFD700;
+            color: black;
+        }
+        .nav-bar .auth-buttons {
+            margin-top: auto;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .game-container {
+            position: relative;
+            flex-grow: 1;
+            height: 100vh;
+            background: url('https://i.namu.wiki/i/CD5fJOlkdCd2h05xLxWAg59mSC_8kFMW7ROm5pbGeP5rLoJ51u1Slzfj-i6R5jJDoCHwcmMgTkP9ty2Dt3dzPA.webp') no-repeat center;
+            background-size: cover;
+            image-rendering: pixelated;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            color: red;
+            font-size: 20px;
+        }
+        .inner{
+        height: 34vw;
+        border-radius: 8px;
+        width: 60vw;
+        }

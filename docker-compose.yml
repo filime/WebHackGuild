@@ -1,0 +1,53 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "20002:9999"
+    restart: always
+    container_name: WHD
+    init: true
+    volumes:
+      - ./app/app.js:/app/app.js
+    deploy:
+      resources:
+        limits:
+          cpus: "1.00"  # 최대 1개의 코어 할당
+          memory: 2GB   # 최대 2GB의 메모리 할당
+
+  mapp:
+    build:
+      context: .
+      dockerfile: pDockerfile
+    ports:
+      - "20001:9999"
+    restart: always
+    container_name: Guild
+    volumes:
+      - ./inj:/app
+    depends_on:
+      - db
+
+  sapp:
+    build:
+      context: .
+      dockerfile: sDockerfile
+    ports:
+      - "20003:80"
+    restart: always
+    container_name: TOW
+    volumes:
+      - ./sqli:/var/www/html/
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: mysss
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwer1234!
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - ./save_db:/var/lib/mysql

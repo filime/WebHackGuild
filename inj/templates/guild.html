@@ -1,0 +1,20 @@
+{% extends "g_base.html" %}
+{% block content %}
+    <div class="game-container">
+        <div class="title"><h1>Welcome, stranger!</h1>
+            
+        <div class="game-contents inner fadein" id="g_contents" style="display:none;">
+            <form action="/login" class="input-form" style="display:none;" id="inputter" method="POST">
+                <input type="text" name="id" placeholder="u r id..." autofocus><br>
+                <input type="password" name="pw" placeholder="u r password..."><br>
+                <button id="input_btn">Login</button>
+            </form>
+            <div style="display:flex;margin-left:10%;" id="Posters">
+                <p class="quest" onclick="location.href=window.location.protocol+'\/\/'+window.location.hostname.concat(':20002/')">
+                <br><br><br><br><br><br><br><br><br><br><br><span>Web Hack Dungeon</span><br><br>it's a very dangerous dungeon.<br><br>There's many XSS monsters are wating for you.</p>
+                <p class="quest" onclick="location.href=window.location.protocol+'\/\/'+window.location.hostname.concat(':20003/')"><br><br><br><br><br><br><br><br><br><br><br>
+                    <span>Tower of Whispering</span><br><br>it's a very basical dungeon.<br><br>U can face various monsters.</p></div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

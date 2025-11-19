@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <link rel="stylesheet" href="{{ url_for('static', filename='score.css') }}">
+        <h1>Scoreboard</h1>
+        <div id="players-container" class="scoreboard">
+         
+
+        </div>
+        <h2 id="rank">Loading rank...</h2>
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='score.js') }}"></script>
+</body>
+</html>

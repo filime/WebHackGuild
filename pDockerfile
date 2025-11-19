@@ -1,0 +1,15 @@
+FROM python:3-slim
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY ./inj ./
+
+RUN apt-get update
+
+RUN pip install flask mysql-connector-python
+
+
+EXPOSE 9999
+
+CMD ["python3","app.py"]
